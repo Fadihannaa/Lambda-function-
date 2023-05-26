@@ -1,0 +1,45 @@
+
+add = lambda x, y: x + y
+
+
+subtract = lambda x, y: x - y
+
+
+multiply = lambda x, y: x * y
+
+
+divide = lambda x, y: x / y if y != 0 else "Error: Division by zero"
+
+
+square = lambda x: x**2
+
+
+numbers = [1, 2, 3, 4, 5]
+
+
+def menu():
+    print("Select an operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Square")
+
+
+menu()
+choice = int(input("Enter your choice: "))
+
+if choice == 1:
+    result = [add(x, y) for x, y in zip(numbers[:-1], numbers[1:])]
+elif choice == 2:
+    result = [subtract(x, y) for x, y in zip(numbers[:-1], numbers[1:])]
+elif choice == 3:
+    result = [multiply(x, y) for x, y in zip(numbers[:-1], numbers[1:])]
+elif choice == 4:
+    result = [divide(x, y) for x, y in zip(numbers[:-1], numbers[1:])]
+elif choice == 5:
+    result = [square(x) for x in numbers]
+else:
+    print("Invalid choice")
+
+print("Result:", result)
